@@ -17,18 +17,22 @@ public class MainActivity extends AppCompatActivity {
     Button btn;
     EditText e,t;
     String s;
-    String user;
+    String user="shurru";
 
-    String pass;
+    String pass="pass";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btn=(Button)findViewById(R.id.idbtn);
-        e=(EditText)findViewById(R.id.editText2);
-        t=(EditText)findViewById(R.id.editText);
+        btn = (Button) findViewById(R.id.idbtn);
+        e = (EditText) findViewById(R.id.editText2);
+        t = (EditText) findViewById(R.id.editText);
 
+
+       // Intent i = getIntent();
+        //user = i.getExtras().getString("user1");
+        //pass = i.getExtras().getString("uer1password");
 
 
     }
@@ -66,21 +70,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void btnclick(View v) {
-       Intent i=getIntent();
-        Bundle extras = i.getExtras();
-        if (extras != null)
-        {
-            String name = extras.getString("user1");
-            String pass=extras.getString("uer1password");
 
 
        // user= i.getExtras().getString("user1");
         //pass= i.getExtras().getString("user1password");
-
-
-            assert name != null;
-            assert pass != null;
-            if(name.equals(e.getText().toString()) && pass.equals(t.getText().toString())) {
+        if(user.equals(e.getText().toString()) && pass.equals(t.getText().toString())) {
 
         Intent activitylogin = new Intent(this,activitylogin.class);
 //            login.putExtra("main", e.getText().toString());
@@ -92,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
           Toast.makeText(MainActivity.this,"Wrong Credentials! Login Again",Toast.LENGTH_SHORT).show();
 
        }
-    }}
+    }
     public void btnclick2(View v)
     {
         Toast.makeText(this, "Welcome to Signup Page", Toast.LENGTH_SHORT).show();

@@ -116,7 +116,7 @@ public class activitylogin extends AppCompatActivity {
     public void mul1(View v)
     {
         num1= Double.parseDouble((String.valueOf(field.getText())));
-        field.append(mul.getText());
+        field.append("*");
     }
     public void div1(View v)
     {
