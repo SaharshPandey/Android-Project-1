@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">My Application</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="one">Enter FullName</string>
+    <string name="two">Enter UserName</string>
+    <string name="three">Enter Email-Id</string>
+    <string name="four">Select Gender</string>
+    <string name="five">What???</string>
+    <string name="seven">Enter Password</string>
+    <string name="eight">Re-Enter Password</string>
+    <string name="next">Next</string>
+    <string-array name="five">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <string name="six">Enter Contact Number</string>
+    <string name="title_activity_main22">Main22Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
