@@ -1,7 +1,9 @@
 package com.example.shurru.myapplication;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,13 +15,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+  // SharedPreferences sharedPreferences;
+
 
     Button btn;
     EditText e,t;
     String s;
-    String user="shurru";
-
-    String pass="pass";
+   // String user="shurru";
+    DatabaseHelper dh;
+   // String pass="pass";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +37,6 @@ public class MainActivity extends AppCompatActivity {
        // Intent i = getIntent();
         //user = i.getExtras().getString("user1");
         //pass = i.getExtras().getString("uer1password");
-
-
     }
     public void onBackPressed()
 
@@ -70,11 +72,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void btnclick(View v) {
-
+    dh=new DatabaseHelper(this);
 
        // user= i.getExtras().getString("user1");
         //pass= i.getExtras().getString("user1password");
-        if(user.equals(e.getText().toString()) && pass.equals(t.getText().toString())) {
+      //  SharedPreferences.Editor editor=sharedPreferences.edit();
+
+        //editor.putString(user,"");
+        //editor.putString(pass,"");
+        //editor.commit();
+       String password= dh.searchpass(e.getText().toString());
+       if( t.getText().toString().equals(password)) {
 
         Intent activitylogin = new Intent(this,activitylogin.class);
 //            login.putExtra("main", e.getText().toString());

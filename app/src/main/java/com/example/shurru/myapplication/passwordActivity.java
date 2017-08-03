@@ -13,6 +13,7 @@ public class passwordActivity extends AppCompatActivity {
     EditText e1;
     EditText e2;
     String password;
+    DatabaseHelper dh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +30,10 @@ public void finalss(View v)
    if(e1.getText().toString().equals(e2.getText().toString()) && !e1.getText().toString().trim().isEmpty())
    {
        password=e1.getText().toString();
-
+       dh=new DatabaseHelper(this);
+       dh.passinsert(password);
        Intent i=new Intent(this,MainActivity.class);
-       i.putExtra(password,"user1password");
+       //i.putExtra(password,"user1password");
        startActivity(i);
 
 

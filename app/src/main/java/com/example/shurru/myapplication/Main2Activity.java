@@ -8,6 +8,7 @@ package com.example.shurru.myapplication;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.ImageButton;
+        import android.widget.Spinner;
         import android.widget.Toast;
 
         import java.util.Objects;
@@ -26,8 +27,8 @@ public class Main2Activity extends AppCompatActivity {
     String user1username;
     String user1contact;
     String user1email;
-
-
+    Spinner spin;
+DatabaseHelper dh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +39,7 @@ public class Main2Activity extends AppCompatActivity {
         username=(EditText)findViewById(R.id.editText3);
         email=(EditText)findViewById(R.id.email);
         contact=(EditText)findViewById(R.id.contact);
+        spin=(Spinner)findViewById(R.id.spinner);
     }
 
 
@@ -49,12 +51,14 @@ public class Main2Activity extends AppCompatActivity {
         finalcontact=contact.getText().toString();
         if(!finalname.trim().isEmpty() && !finalusername.trim().isEmpty() && !finalemail.trim().isEmpty() && !finalcontact.trim().isEmpty() )
         {
-            user1name=finalname;
-            user1username=finalusername;
-            user1contact=finalcontact;
-            user1email=finalcontact;
+            dh=new DatabaseHelper(this);
+            dh.insert(finalname,finalemail,finalusername,spin.getTransitionName(),finalcontact);
+            //user1name=finalname;
+            //user1username=finalusername;
+            //user1contact=finalcontact;
+            //user1email=finalcontact;
             Intent passwordactivity=new Intent(Main2Activity.this,passwordActivity.class);
-            passwordactivity.putExtra(finalusername,"user1");
+            //passwordactivity.putExtra(finalusername,"user1");
             startActivity(passwordactivity);
 
 
